@@ -1,0 +1,76 @@
+.item-Card {
+    width: 160px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: center;
+    margin: 10px 0;
+    margin-bottom: 70px;
+}
+
+.item-Card .img-box {
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: absolute;
+    top: -42px;
+}
+
+.item-Card .img-box img {
+    object-fit: contain;
+    /* position: absolute; */
+    /* top: 0px; */
+    width: 60%;
+}
+
+.item-content {
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba( 0 , 0 , 0 , .15 )  ;
+    border-radius: 15px;
+    padding: 10px;
+    padding-top: 95px ;
+    width: 100%;
+}
+
+.item-content h3 {
+    font-size: 16px;
+}
+
+.item-Card .isfavorite {
+    position: absolute;
+    right: 10px;
+    top: 65px;
+}
+
+.item-Card .isfavorite .MuiSvgIcon-root {
+    color: palevioletred;
+}
+
+.item-content .button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-content .button .rating .MuiSvgIcon-root {
+    font-size: 14px;
+    color:  #f8901c;
+}
+
+.item-content .button .add-to-card {
+    background:  #f8901c;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+

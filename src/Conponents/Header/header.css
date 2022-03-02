@@ -1,0 +1,131 @@
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    height: 60px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 200;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    min-width: 40px;
+    width: 50px;
+}
+
+.input-Box {
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    padding: 8px 15px;
+    min-width: 120px;
+    width: 960px;
+    margin: 0 21px;
+}
+
+.input-Box .searchIcon {
+    color: #787a84;
+    font-size: 20px;
+}
+
+.input-Box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #787a84;
+    padding-left: 8px;
+    font-size: 14;
+    font-weight: 500;
+}
+
+.input-Box input:focus {
+    outline: none;
+}
+
+.Shopping-Cart {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.Shopping-Cart .cart {
+    font-size: 30px;
+    color: #373848;
+}
+
+.Shopping-Cart .cart-content {
+    width: 20px;
+    height: 20px;
+    background: #f8901c;
+    border-radius: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.Shopping-Cart .cart-content p {
+    font-weight: 500;
+    color: #faf9fb
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container .image-box {
+    width:40px;
+    height: 40px;
+    min-width: 40px ; 
+    border-radius: 40vw;
+    background: #444;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    overflow: hidden;
+    position: relative;
+    margin: 0 10px;
+}
+
+.profile-container .image-box .profile-pic {
+    width: 100px ;
+    height:100px;
+    object-fit:cover;
+    position: absolute;
+    top: -2px;
+}
+
+.profile-container .userName {
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 500;
+    display: none;
+    align-items: center;
+}
+
+.toggle-menu {
+    transform: rotate(91deg);
+}
+
+.toggle-menu .toggle-icon {
+    color: #373848;
+    font-size: 30px
+}
+

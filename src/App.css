@@ -1,38 +1,264 @@
 .App {
-  text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background: #faf9fb;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App::-webkit-scrollbar {
+    display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* start Main Section Styles */
+main {
+    width: 100%;
+    height: auto;
+    background: #faf9fb;
+    margin-top: 60px;
 }
 
-.App-link {
-  color: #61dafb;
+.Main-Container {
+    width: 100%;
+    height: auto;
+    background: #faf9fb;
+    padding: 10px;
+    padding-bottom: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner {
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg")
+        no-repeat center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
+
+.delivery-pic {
+    position: absolute;
+    right: -60px;
+    bottom: -10px;
+    width: 220px;
+}
+
+.Banner-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Banner-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2b3c;
+}
+
+.Banner-content p,
+.Banner-content span {
+    font-size: 18px;
+    color: #989594;
+}
+
+.Banner-content p {
+    margin: 0;
+}
+
+.Banner-content a {
+    background: #f8901c;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 100vw;
+    color: #faf9fb;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Banner-content a:hover {
+    color: #faf9fb;
+    box-shadow: 0px 5px 20px rgba(0,0,0, .15 ) ;
+    transition: .5s ;
+}
+
+.Banner-content p span {
+    color: #f8901c;
+}
+
+/* end Main Section Styles */
+
+/* start Dish Container */
+.Dish-container {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.menu-container {
+    width: 100%;
+}
+
+.row-container {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll ; 
+    overflow-y: hidden ;
+    margin: 10px 0 ;
+    padding: 10px 0 ;
+
+}
+
+.row-container::-webkit-scrollbar {
+    display: none ;
+}
+
+.dish-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+/* end Dish Container */
+
+/* start buttons styles */
+.Button-Menu {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background: #d5d5d5;
+    border-radius: 25px 25px 0 0;
+    z-index: 200;
+}
+
+.Button-Menu #menu {
+    padding: 0px;
+    display: flex;
+}
+
+.Button-Menu #menu li {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button-Menu #menu li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+}
+
+.Button-Menu #menu li a .icon {
+    position: relative;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.Button-Menu #menu li a .icon .MuiSvgIcon-root {
+    font-size: 26px;
+    color: #373848;
+}
+
+.Button-Menu #menu li.active a .icon {
+    transform: translateY(-26px);
+}
+
+.Button-Menu #menu li.active a .icon .MuiSvgIcon-root {
+    color: #faf9fb;
+    transition: 0.5s;
+}
+
+.Button-Menu #menu li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(60px * 0));
+}
+
+.Button-Menu #menu li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(60px * 1));
+}
+
+.Button-Menu #menu li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(60px * 2));
+}
+
+.Button-Menu #menu li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(60px * 3));
+}
+
+.Button-Menu #menu li:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(60px * 4));
+}
+
+.Button-Menu #menu li:nth-child(6).active ~ .indicator {
+    transform: translateX(calc(60px * 5));
+}
+
+.indicator {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #f8901c;
+    border-radius: 100vh;
+    top: -50%;
+    border: 6px solid #faf9fb;
+    transition: 0.5s;
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border-top-right-radius: 18px;
+    box-shadow: 0px -10px 0 0 #faf9fb;
+}
+
+.indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border-top-left-radius: 18px;
+    box-shadow: 0px -10px 0 0 #faf9fb;
+}
+
+/* end button styles */
