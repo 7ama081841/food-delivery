@@ -24,12 +24,16 @@ import MenuCard from "./Conponents/menu card/MenuCard";
 import ItemCard from "./Conponents/item-card/ItemCard";
 
 // import hocks
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // import data
 import { data } from "./Conponents/data";
 
 function App() {
+
+    // Main Dish Data
+    const [isMainData , setIsMainData ] = useState()
+
     useEffect(() => {
         const menuLi = document.querySelectorAll("#menu li");
 
@@ -101,8 +105,8 @@ function App() {
                                     key={i}
                                     imgSrc={item.imgSrc}
                                     name={item.name}
-                                    ratings={5}
-                                    price={"3.7"}
+                                    ratings={item.ratings}
+                                    price={item.price}
                                 />
                             ))}
                         </div>
@@ -133,6 +137,7 @@ function App() {
                     <div className="indicator"></div>
                 </ul>
             </div>
+            wselt el 2:53:33
         </div>
     );
 }
