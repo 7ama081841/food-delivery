@@ -3,17 +3,16 @@ import React, { useState } from "react";
 
 import "./item card.css"
 
-export default function ItemCard({ imgSrc, name, ratings, price }) {
-
-    const [isfavorite , setIsfavorite] = useState(false)
+export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
+    const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
 
-    const handelClick = ( value ) => {
-        setCarantValue(value)
-    }
+    const handelClick = (value) => {
+        setCarantValue(value);
+    };
 
     return (
-        <div className="item-Card">
+        <div className="item-Card" id={itemId}>
             <div
                 className={`isfavorite ${isfavorite ? "active" : ""} `}
                 onClick={() => setIsfavorite(!isfavorite)}
@@ -32,7 +31,8 @@ export default function ItemCard({ imgSrc, name, ratings, price }) {
                             <i
                                 key={i}
                                 className={`rating ${
-                                (carantValue > i ? "orange" : "gray" )} `}
+                                    carantValue > i ? "orange" : "gray"
+                                } `}
                                 onClick={() => handelClick(i + 1)}
                             >
                                 <StarRounded />

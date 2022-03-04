@@ -27,12 +27,13 @@ import ItemCard from "./Conponents/item-card/ItemCard";
 import { useEffect, useState } from "react";
 
 // import data
-import { data } from "./Conponents/data";
+import { MenuItems, Items } from "./Conponents/data";
 
 function App() {
-
     // Main Dish Data
-    const [isMainData , setIsMainData ] = useState()
+    const [isMainData, setIsMainData] = useState(
+        Items.filter((el) => el.itemId === "buger01")
+    );
 
     useEffect(() => {
         const menuLi = document.querySelectorAll("#menu li");
@@ -58,13 +59,17 @@ function App() {
         }
 
         menuCards.forEach((el) => el.addEventListener("click", menuActive));
-    }, []);
+    }, [isMainData]);
+
+    // filter for items
+    const filterForItems = (itemId) => {
+        setIsMainData(Items.filter((el) => el.itemId === itemId));
+    };
 
     return (
         <div className="App">
             {/* Header Section */}
             <Header />
-
             {/* Main Cotainer */}
             <main>
                 <div className="Main-Container">
@@ -85,12 +90,18 @@ function App() {
                         </div>
 
                         <div className="row-container">
-                            {data &&
-                                data.map((data, key) => (
-                                    <div key={key}>
+                            {MenuItems &&
+                                MenuItems.map((data) => (
+                                    <div
+                                        key={data.id}
+                                        id={data.id}
+                                        onClick={() =>
+                                            filterForItems(data.itemId)
+                                        }
+                                    >
                                         <MenuCard
                                             imgSrc={data.imgSrc}
-                                            name={"name"}
+                                            name={data.name}
                                             isactive={
                                                 data.id === 1 ? true : false
                                             }
@@ -100,21 +111,28 @@ function App() {
                         </div>
 
                         <div className="dish-item-container">
-                            {data.map((item, i) => (
-                                <ItemCard
-                                    key={i}
-                                    imgSrc={item.imgSrc}
-                                    name={item.name}
-                                    ratings={item.ratings}
-                                    price={item.price}
-                                />
-                            ))}
+                            {isMainData &&
+                                isMainData.map((data) => (
+                                    <ItemCard
+                                        key={data.id}
+                                        itemId={data.id}
+                                        imgSrc={data.imgSrc}
+                                        name={data.name}
+                                        ratings={data.ratings}
+                                        price={data.price}
+                                    />
+                                ))}
                         </div>
                     </div>
                 </div>
-                <div className="right-menu"></div>
+                <div className="right-menu">
+                    <div className="debit-card-container">
+                        <div className="debit-card">
+                                    
+                        </div>
+                    </div>
+                </div>
             </main>
-
             {/* Button Menu */}
             <div className="Button-Menu">
                 <ul id="menu">
@@ -137,7 +155,7 @@ function App() {
                     <div className="indicator"></div>
                 </ul>
             </div>
-            wselt el 2:53:33
+            wselt el 2:53:37
         </div>
     );
 }
