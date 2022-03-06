@@ -22,6 +22,7 @@ import BannerName from "./Conponents/banner/BannerName";
 import SubMenuContainer from "./Conponents/sub menu Container/SubMenuContainer";
 import MenuCard from "./Conponents/menu card/MenuCard";
 import ItemCard from "./Conponents/item-card/ItemCard";
+import DebitCard from "./Conponents/debit card/DebitCard";
 
 // import hocks
 import { useEffect, useState } from "react";
@@ -128,7 +129,7 @@ function App() {
                 <div className="right-menu">
                     <div className="debit-card-container">
                         <div className="debit-card">
-                                    
+                            <DebitCard />
                         </div>
                     </div>
                 </div>
@@ -155,7 +156,6 @@ function App() {
                     <div className="indicator"></div>
                 </ul>
             </div>
-            wselt el 2:53:37
         </div>
     );
 }
