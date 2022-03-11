@@ -12,7 +12,7 @@ export default function SubMenuContainer( {name} ) {
         <h3>{name} </h3>
         <div className='view-all'>
             <p>view all</p>
-            <i><ChevronRightRounded/> </i>
+            <i><ChevronRightRounded/></i>
         </div>
     </div>
 }

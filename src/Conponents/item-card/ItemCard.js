@@ -1,11 +1,20 @@
 import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Items } from "../data";
 
-import "./item card.css"
+import "./item card.css";
 
 export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
+    
+    const [isCard, setCard] = useState(null);
+    
+    useEffect(() => {
+        if( isCard) {
+            console.log(isCard)
+        }
+    }, [isCard]);
 
     const handelClick = (value) => {
         setCarantValue(value);
@@ -42,7 +51,12 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
                             <span>$ </span> {price}
                         </h3>
                     </div>
-                    <i className="add-to-card">
+                    <i
+                        className="add-to-card"
+                        onClick={() =>
+                            setCard(Items.find((el) => el.id === itemId))
+                        }
+                    >
                         <AddRounded />
                     </i>
                 </div>

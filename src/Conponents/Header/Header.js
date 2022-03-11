@@ -10,6 +10,12 @@ import {
 import "./header.css"
 
 export default function Header() {
+
+    const toggleAclive = () => {
+        const toggle = document.querySelector(".right-menu");
+        toggle.classList.toggle("aclive");
+    }
+    
     return (
         <header>
             <img
@@ -41,9 +47,9 @@ export default function Header() {
 
                 <h2 className="userName"> userName </h2>
             </div>
-            
-            <div className="toggle-menu">
-                <BarChart className="toggle-icon d-block d-md-none " />
+
+            <div className="toggle-menu d-block d-md-none  ">
+                <BarChart className="toggle-icon " onClick={toggleAclive} />
             </div>
         </header>
     );

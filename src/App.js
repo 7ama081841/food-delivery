@@ -23,6 +23,7 @@ import SubMenuContainer from "./Conponents/sub menu Container/SubMenuContainer";
 import MenuCard from "./Conponents/menu card/MenuCard";
 import ItemCard from "./Conponents/item-card/ItemCard";
 import DebitCard from "./Conponents/debit card/DebitCard";
+import CardItam from "./Conponents/card item/CardItam";
 
 // import hocks
 import { useEffect, useState } from "react";
@@ -72,7 +73,7 @@ function App() {
             {/* Header Section */}
             <Header />
             {/* Main Cotainer */}
-            <main>
+            <main className="d-md-flex ">
                 <div className="Main-Container">
                     {/* banner */}
                     <div className="banner">
@@ -126,10 +127,34 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div className="right-menu">
+                <div className="right-menu ">
                     <div className="debit-card-container">
                         <div className="debit-card">
                             <DebitCard />
+                        </div>
+                    </div>
+
+                    <div className="card-checkOut-container">
+                        <div className="card-container">
+                            <SubMenuContainer name={"card itams"} />
+
+                            <div className="card-itams">
+                                {Items.map((el) => (
+                                    <CardItam
+                                        name={el.name}
+                                        imgSrc={el.imgSrc}
+                                        price={el.price}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="total-section">
+                            <h3>total</h3>
+                            <p>
+                                {" "}
+                                <span>$</span> 4.55{" "}
+                            </p>
                         </div>
                     </div>
                 </div>
