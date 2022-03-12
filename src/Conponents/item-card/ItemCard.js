@@ -1,20 +1,28 @@
 import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import { Items } from "../data";
-
+import { actionType } from "../reducer";
 import "./item card.css";
+import { useStateValue } from "../StateProvider";
+
+export let cardData = []
 
 export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
     
-    const [isCard, setCard] = useState(null);
+    const [isCart , setCard] = useState(null);
+    const [{} , dispatch ] = useStateValue()
     
     useEffect(() => {
-        if( isCard) {
-            console.log(isCard)
+        if( isCart) {
+            cardData.push(isCart)
+            dispatch({
+                type : actionType.SET_CART,
+                cart : cardData,
+            })
         }
-    }, [isCard]);
+    }, [isCart]);
 
     const handelClick = (value) => {
         setCarantValue(value);

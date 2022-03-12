@@ -30,12 +30,16 @@ import { useEffect, useState } from "react";
 
 // import data
 import { MenuItems, Items } from "./Conponents/data";
+import { cardData } from "./Conponents/item-card/ItemCard";
+import { useStateValue } from "./Conponents/StateProvider";
 
 function App() {
     // Main Dish Data
     const [isMainData, setIsMainData] = useState(
         Items.filter((el) => el.itemId === "buger01")
     );
+
+    const [{ cart }, dispatch] = useStateValue();
 
     useEffect(() => {
         const menuLi = document.querySelectorAll("#menu li");
@@ -127,6 +131,7 @@ function App() {
                         </div>
                     </div>
                 </div>
+
                 <div className="right-menu ">
                     <div className="debit-card-container">
                         <div className="debit-card">
@@ -134,29 +139,35 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="card-checkOut-container">
-                        <div className="card-container">
-                            <SubMenuContainer name={"card itams"} />
+                    {!cart ? (
+                        <div></div>
+                    ) : (
+                        <div className="card-checkOut-container">
+                            <div className="card-container">
+                                <SubMenuContainer name={"card itams"} />
 
-                            <div className="card-itams">
-                                {Items.map((el) => (
-                                    <CardItam
-                                        name={el.name}
-                                        imgSrc={el.imgSrc}
-                                        price={el.price}
-                                    />
-                                ))}
+                                <div className="card-itams">
+                                    {cardData.map((el, key) => (
+                                        <CardItam
+                                            key={key}
+                                            name={el.name}
+                                            imgSrc={el.imgSrc}
+                                            price={el.price}
+                                        />
+                                    ))}
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="total-section">
-                            <h3>total</h3>
-                            <p>
-                                {" "}
-                                <span>$</span> 4.55{" "}
-                            </p>
+                            <div className="total-section">
+                                <h3>total</h3>
+                                <p>
+                                    <span>$</span> 4.55{" "}
+                                </p>
+                            </div>
+
+                            <button className="check-out">Check Out</button>
                         </div>
-                    </div>
+                    )}
                 </div>
             </main>
             {/* Button Menu */}
@@ -181,6 +192,7 @@ function App() {
                     <div className="indicator"></div>
                 </ul>
             </div>
+            wselt el 4:08:00
         </div>
     );
 }
