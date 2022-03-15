@@ -1,6 +1,6 @@
 // import styles
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 // import images
 import image from "./images/take-out-biryani-pizza-chinese-cuisine-delivery-pizza-delivery-95393146bb30d5c8e45c2d168a63f28d.png";
@@ -77,7 +77,7 @@ function App() {
             {/* Header Section */}
             <Header />
             {/* Main Cotainer */}
-            <main className="d-md-flex ">
+            <main className="flex ">
                 <div className="Main-Container">
                     {/* banner */}
                     <div className="banner">
@@ -132,7 +132,7 @@ function App() {
                     </div>
                 </div>
 
-                <div className="right-menu ">
+                <div className="right-menu z-0 fixed md:static md:right-0 min-h-full md:z-0 sm:z-20">
                     <div className="debit-card-container">
                         <div className="debit-card">
                             <DebitCard />
@@ -147,14 +147,16 @@ function App() {
                                 <SubMenuContainer name={"card itams"} />
 
                                 <div className="card-itams">
-                                    {cardData.map((el, key) => (
-                                        <CardItam
-                                            key={key}
-                                            name={el.name}
-                                            imgSrc={el.imgSrc}
-                                            price={el.price}
-                                        />
-                                    ))}
+                                    {cart &&
+                                        cart.map((el, key) => (
+                                            <CardItam
+                                                key={key}
+                                                name={el.name}
+                                                imgSrc={el.imgSrc}
+                                                price={el.price}
+                                                itemId={el.id}
+                                            />
+                                        ))}
                                 </div>
                             </div>
 

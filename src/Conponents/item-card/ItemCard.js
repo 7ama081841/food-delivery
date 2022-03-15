@@ -5,22 +5,23 @@ import { actionType } from "../reducer";
 import "./item card.css";
 import { useStateValue } from "../StateProvider";
 
-export let cardData = []
+export let cardData = [];
 
 export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
-    
-    const [isCart , setCard] = useState(null);
-    const [{} , dispatch ] = useStateValue()
-    
+
+    const [isCart, setCard] = useState(null);
+    const [{ cart = [] }, dispatch] = useStateValue();
+
+    console.log({ cart });
+
     useEffect(() => {
-        if( isCart) {
-            cardData.push(isCart)
+        if (isCart) {
             dispatch({
-                type : actionType.SET_CART,
-                cart : cardData,
-            })
+                type: actionType.SET_CART,
+                cart: cart ? [...cart, isCart] : [isCart],
+            });
         }
     }, [isCart]);
 

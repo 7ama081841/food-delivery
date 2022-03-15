@@ -132,23 +132,25 @@ main {
 /* start rignt menu styles */
 .right-menu {
     width: 350px;
-    height: calc(100% - 55px);
+    /* height: calc(100% - 55px); */
     background: #fff;
-    position: fixed;
+    /* position: fixed; */
     right: 0px;
     top: 60px;
-    z-index: 210;
+    /* z-index: 210; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 10px;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition:  0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
-    transform: translate(350px);
+    /* transform: translate(350px); */
+    right: -365px;
 }
 
 .right-menu.aclive {
-    transform: translate(0px);
+    /* transform: translate(0px); */
+    right: 0px ;
 }
 
 /* end rignt menu styles */
@@ -225,7 +227,7 @@ main {
     height: 60px;
     background: #d5d5d5;
     border-radius: 25px 25px 0 0;
-    z-index: 200;
+    z-index: 10;
 }
 
 .Button-Menu #menu {

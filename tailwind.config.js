@@ -1,7 +1,10 @@
 module.exports = {
-    content: ["./node_modules/**/*.{js,jsxtailwindcss } "],
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
         extend: {},
+        h500: {
+            "1/2": "500px",
+        },
     },
     plugins: [],
 };

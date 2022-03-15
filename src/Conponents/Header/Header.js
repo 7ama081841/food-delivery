@@ -7,15 +7,14 @@ import {
 } from "@mui/icons-material";
 
 // import style
-import "./header.css"
+import "./header.css";
 
 export default function Header() {
-
     const toggleAclive = () => {
         const toggle = document.querySelector(".right-menu");
         toggle.classList.toggle("aclive");
-    }
-    
+    };
+
     return (
         <header>
             <img
@@ -48,7 +47,7 @@ export default function Header() {
                 <h2 className="userName"> userName </h2>
             </div>
 
-            <div className="toggle-menu d-block d-md-none  ">
+            <div className="toggle-menu md:hidden sm:block">
                 <BarChart className="toggle-icon " onClick={toggleAclive} />
             </div>
         </header>
