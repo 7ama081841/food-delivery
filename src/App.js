@@ -29,11 +29,27 @@ import CardItam from "./Conponents/card item/CardItam";
 import { useEffect, useState } from "react";
 
 // import data
-import { MenuItems, Items } from "./Conponents/data";
 import { cardData } from "./Conponents/item-card/ItemCard";
 import { useStateValue } from "./Conponents/StateProvider";
 
+import axios from "axios" 
+
 function App() {
+
+    const [ MenuItems , setMenuItems ] = useState([])
+    const [Items, setItems] = useState([]);
+    
+    useEffect(() => {
+        axios.get("http://localhost:5000/MenuItems").then((response) => {
+            // console.log(response.data);
+            setMenuItems( response.data );
+        });
+
+        axios.get("http://localhost:5000/Items").then((response) => {
+            setItems(response.data);
+        });
+    });
+
     // Main Dish Data
     const [isMainData, setIsMainData] = useState(
         Items.filter((el) => el.itemId === "buger01")
@@ -109,7 +125,7 @@ function App() {
                                             imgSrc={data.imgSrc}
                                             name={data.name}
                                             isactive={
-                                                data.id === 1 ? true : false
+                                                data.id === 1 ? true : false 
                                             }
                                         />
                                     </div>
@@ -194,7 +210,6 @@ function App() {
                     <div className="indicator"></div>
                 </ul>
             </div>
-            wselt el 4:08:00
         </div>
     );
 }

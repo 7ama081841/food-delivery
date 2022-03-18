@@ -14,8 +14,6 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     const [isCart, setCard] = useState(null);
     const [{ cart = [] }, dispatch] = useStateValue();
 
-    console.log({ cart });
-
     useEffect(() => {
         if (isCart) {
             dispatch({
