@@ -25,7 +25,7 @@ export default function Header() {
 
             <div className="input-Box">
                 <SearchRounded className="searchIcon" />
-                <input type="text" placeholder="sreash" />
+                <input type="text" placeholder="searsh" />
             </div>
 
             <div className="Shopping-Cart">
