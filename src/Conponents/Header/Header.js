@@ -30,9 +30,9 @@ export default function Header() {
 
             <div className="Shopping-Cart">
                 <ShoppingCartRounded className="cart" />
-                <div className="cart-content">
+                {/*<div className="cart-content">
                     <p>2</p>
-                </div>
+                </div>*/ }
             </div>
 
             <div className="profile-container">
