@@ -52,7 +52,7 @@ const Items = [
         id: 2,
         itemId: "buger01",
         imgSrc: "https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fburger2.png?alt=media&token=b256ed7a-fe35-4051-9bf5-24f39b79f2b2",
-        name: "Smokin' Burger",
+        name: "Smokin Burger",
         ratings: 5,
         price: "12",
     },
