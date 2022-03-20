@@ -11,7 +11,7 @@ export default function BannerName( {name , discount , link} ) {
                 <span>${discount}</span> purchase
             </p>
 
-            <a href={link}>Lrearn More</a>
+            <a href={link}>Learn More</a>
         </div>
     );
 }

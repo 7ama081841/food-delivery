@@ -108,7 +108,7 @@ function App() {
                     {/* Dish */}
                     <div className="Dish-container">
                         <div className="menu-card">
-                            <SubMenuContainer name={"Menu Categoey"} />
+                            <SubMenuContainer name={"Menu Category"} />
                         </div>
 
                         <div className="row-container md:justify-around ">
