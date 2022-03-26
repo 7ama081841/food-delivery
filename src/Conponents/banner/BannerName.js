@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BannerName( {name , discount , link} ) {
+export default function BannerName({ name, discount, link }) {
     return (
         <div className="Banner-content">
             <h3> hello {name} </h3>
@@ -8,7 +8,7 @@ export default function BannerName( {name , discount , link} ) {
             <p>get free discount</p>
 
             <p>
-                <span>${discount}</span> purchase
+                <span>${discount}</span>purchase
             </p>
 
             <a href={link}>Learn More</a>

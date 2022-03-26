@@ -5,8 +5,6 @@ import { actionType } from "../reducer";
 import "./item card.css";
 import { useStateValue } from "../StateProvider";
 
-export let cardData = [];
-
 export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
@@ -20,6 +18,7 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
                 type: actionType.SET_CART,
                 cart: cart ? [...cart, isCart] : [isCart],
             });
+            
         }
     }, [isCart]);
 
@@ -60,9 +59,7 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
                     </div>
                     <i
                         className="add-to-card"
-                        onClick={() =>
-                            setCard(Items.find((el) => el.id === itemId))
-                        }
+                        onClick={() => setCard(Items.find((el) => el.id === itemId))}
                     >
                         <AddRounded />
                     </i>

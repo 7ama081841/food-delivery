@@ -12,7 +12,7 @@ import "./header.css";
 export default function Header() {
     const toggleAclive = () => {
         const toggle = document.querySelector(".right-menu");
-        toggle.classList.toggle("aclive");
+        toggle.classList.toggle("active");
     };
 
     return (

@@ -1,11 +1,11 @@
 import { AddRounded, RemoveRounded } from "@mui/icons-material";
-import React, { useEffect, useRef, useState } from "react";
-import ItemCard from "../item-card/ItemCard";
+import React, { useEffect, useState } from "react";
 import { actionType } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./cardItam.css";
 
 export default function CardItam({ name, imgSrc, price, itemId }) {
+
     const [qty, setQty] = useState(1);
     const [{ cart }, dispatch] = useStateValue();
     const [itemPrice, setItemPrice] = useState(
@@ -20,7 +20,7 @@ export default function CardItam({ name, imgSrc, price, itemId }) {
         if (action === "add") {
             setQty(qty + 1);
         } else {
-            if (qty == 1) {
+            if (qty === 1) {
                 dispatch({
                     type: actionType.SET_CART,
                     cart: cart ? cart.filter((e) => e?.id !== id) : [],

@@ -29,17 +29,16 @@ import CardItam from "./Conponents/card item/CardItam";
 import { useEffect, useState } from "react";
 
 // import data
-import {MenuItems , Items } from "./Conponents/data"
-import { cardData } from "./Conponents/item-card/ItemCard";
+import { MenuItems, Items } from "./Conponents/data";
+// import { cardData } from "./Conponents/item-card/ItemCard";
 import { useStateValue } from "./Conponents/StateProvider";
 
-// import axios from "axios" 
+// import axios from "axios"
 
 function App() {
-
     // const [ MenuItems , setMenuItems ] = useState([])
     // const [Items, setItems] = useState([]);
-    
+
     // useEffect(() => {
     //     axios.get("http://localhost:5000/MenuItems").then((response) => {
     //         setMenuItems( response.data );
@@ -55,7 +54,7 @@ function App() {
         Items.filter((el) => el.itemId === "buger01")
     );
 
-    const [{ cart }, dispatch] = useStateValue();
+    const [{ cart }] = useStateValue();
 
     useEffect(() => {
         const menuLi = document.querySelectorAll("#menu li");
@@ -108,7 +107,7 @@ function App() {
                     {/* Dish */}
                     <div className="Dish-container">
                         <div className="menu-card">
-                            <SubMenuContainer name={"Menu Categoy"} />
+                            <SubMenuContainer name={"Menu Category"} />
                         </div>
 
                         <div className="row-container md:justify-around ">

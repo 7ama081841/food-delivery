@@ -148,7 +148,7 @@ main {
     right: -365px;
 }
 
-.right-menu.aclive {
+.right-menu.active {
     /* transform: translate(0px); */
     right: 0px ;
 }

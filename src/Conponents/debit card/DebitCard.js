@@ -17,9 +17,9 @@ export default function DebitCard() {
             />
 
             <div className="card-number"> 2546 592 7591 3657 </div>
-            <div className="card-from"> 10/31 </div> 
-            <div className="card-name"> mohamed chaabeni </div>
+            {/* <div className="card-from"> 10/31 </div>  */ }
             <div className="card-to"> 6/25 </div>
+            <div className="card-name"> mohamed chaabeni </div>
             <div className="card-ring"></div>
         </div>
     );
