@@ -25,7 +25,7 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
         setCarantValue(value);
     };
 
-    return (
+    return ( 
         <div className="item-Card" id={itemId}>
             <div
                 className={`isfavorite ${isfavorite ? "active" : ""} `}
