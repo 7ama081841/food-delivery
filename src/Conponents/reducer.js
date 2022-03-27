@@ -9,7 +9,9 @@ export const actionType = {
 };
 
 export const reducer = (state, action) => {
-    
+
+    console.log(action)
+
     switch (action.type) {
         case actionType.SET_CART:
             return {
@@ -26,7 +28,6 @@ export const reducer = (state, action) => {
         default:
             return state;
     }
-    
 };
 
 export default reducer;

@@ -178,7 +178,12 @@ function App() {
                             <div className="total-section">
                                 <h3>total</h3>
                                 <p>
-                                    <span>$</span> 4.55{" "}
+                                    <span>$</span>
+                                    {cart.reduce(
+                                        (total, e) =>
+                                            total + parseFloat(e.price),
+                                        0
+                                    )}
                                 </p>
                             </div>
 

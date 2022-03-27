@@ -16,9 +16,8 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
         if (isCart) {
             dispatch({
                 type: actionType.SET_CART,
-                cart: cart ? [...cart, isCart] : [isCart],
+                cart: cart ? [...cart, { ...isCart }] : [isCart],
             });
-            
         }
     }, [isCart]);
 
@@ -59,7 +58,9 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
                     </div>
                     <i
                         className="add-to-card"
-                        onClick={() => setCard(Items.find((el) => el.id === itemId))}
+                        onClick={() =>
+                            setCard(Items.find((el) => el.id === itemId))
+                        }
                     >
                         <AddRounded />
                     </i>
