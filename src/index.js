@@ -7,11 +7,16 @@ import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./Conponents/StateProvider";
 import { initialState, reducer } from "./Conponents/reducer.js";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 ReactDOM.render(
     <React.StrictMode>
-        <StateProvider initialState={initialState} reducer={reducer}>
-            <App />
-        </StateProvider>
+        <Provider store={store} >
+            <StateProvider initialState={initialState} reducer={reducer}>
+                <App />
+            </StateProvider>
+        </Provider>
     </React.StrictMode>,
     document.getElementById("root")
 );

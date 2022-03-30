@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 import { actionType } from "../reducer";
 import { useStateValue } from "../StateProvider";
 import "./cardItam.css";
+import { useSelector, useDispatch } from "react-redux";
+import { INCREMENT, DECREMENT } from "../../redux/actions/qtyAction";
 
 export default function CardItam({ name, imgSrc, price, itemId }) {
-
-    const [qty, setQty] = useState(1);
+    // const [qty, setQty] = useState(1);
+    const qty = useSelector((state) => state.qty);
+    const qtyDispatch = useDispatch();
+    console.log(qty);
     const [{ cart }, dispatch] = useStateValue();
     const [itemPrice, setItemPrice] = useState(
         parseInt(qty) * parseFloat(price)
@@ -18,8 +22,10 @@ export default function CardItam({ name, imgSrc, price, itemId }) {
 
     const updateQty = (action, id) => {
         if (action === "add") {
-            setQty(qty + 1);
-            
+            // setQty(qty + 1);
+            qtyDispatch({
+                type: INCREMENT,
+            });
         } else {
             if (qty === 1) {
                 dispatch({
@@ -27,7 +33,10 @@ export default function CardItam({ name, imgSrc, price, itemId }) {
                     cart: cart ? cart.filter((e) => e?.id !== id) : [],
                 });
             }
-            setQty(qty - 1);
+            // setQty(qty - 1);
+            qtyDispatch({
+                type: DECREMENT,
+            });
         }
     };
 

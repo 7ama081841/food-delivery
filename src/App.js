@@ -33,7 +33,7 @@ import { MenuItems, Items } from "./Conponents/data";
 // import { cardData } from "./Conponents/item-card/ItemCard";
 import { useStateValue } from "./Conponents/StateProvider";
 
-// import axios from "axios"
+import {useSelector} from "react-redux"
 
 function App() {
     // const [ MenuItems , setMenuItems ] = useState([])
@@ -55,6 +55,7 @@ function App() {
     );
 
     const [{ cart }] = useStateValue();
+    const qty = useSelector( state => state.qty ) 
 
     useEffect(() => {
         const menuLi = document.querySelectorAll("#menu li");
@@ -181,7 +182,7 @@ function App() {
                                     <span>$</span>
                                     {cart.reduce(
                                         (total, e) =>
-                                            total + parseFloat(e.price),
+                                            total + parseFloat(e.price) * parseInt(qty) ,
                                         0
                                     )}
                                 </p>
