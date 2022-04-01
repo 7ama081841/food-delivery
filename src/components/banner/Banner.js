@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function BannerName( {name , discount , link} ) {
+export default function Banner({ name, discount, link }) {
     return (
         <div className="Banner-content">
-            <h3> hellow {name} </h3>
+            <h3> hello {name} </h3>
 
-            <p>get free discountv</p>
+            <p>get free discount</p>
 
             <p>
                 <span>${discount}</span> purchase

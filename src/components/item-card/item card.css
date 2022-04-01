@@ -6,8 +6,6 @@
     flex-direction: column;
     /* justify-content: flex-end; */
     align-items: center;
-    margin: 10px 0;
-    margin-bottom: 70px;
 }
 
 .item-Card .img-box {
@@ -19,7 +17,6 @@
     justify-content: center;
     padding: 5px;
     position: absolute;
-    top: -42px;
 }
 
 .item-Card .img-box img {

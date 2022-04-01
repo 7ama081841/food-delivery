@@ -1,17 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import "./input.css";
 import App from "./App";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { StateProvider } from "./Conponents/StateProvider";
-import { initialState, reducer } from "./Conponents/reducer.js";
+import { StoreProvider } from "./store";
 
 ReactDOM.render(
     <React.StrictMode>
-        <StateProvider initialState={initialState} reducer={reducer}>
+        <StoreProvider>
             <App />
-        </StateProvider>
+        </StoreProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );

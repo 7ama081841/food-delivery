@@ -1,25 +1,26 @@
 import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
+import { noop } from "lodash";
 import React, { useEffect, useState } from "react";
-import { Items } from "../data";
-import { actionType } from "../reducer";
+import { connect } from "react-redux";
+import { addToCart } from "../../store/actions";
 import "./item card.css";
-import { useStateValue } from "../StateProvider";
 
-export let cardData = [];
-
-export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
+function ItemCard({
+    id,
+    imgSrc,
+    name,
+    ratings,
+    price,
+    itemId,
+    addToCart = noop,
+}) {
     const [isfavorite, setIsfavorite] = useState(false);
     const [carantValue, setCarantValue] = useState(Math.floor(ratings));
 
     const [isCart, setCard] = useState(null);
-    const [{ cart = [] }, dispatch] = useStateValue();
 
     useEffect(() => {
         if (isCart) {
-            dispatch({
-                type: actionType.SET_CART,
-                cart: cart ? [...cart, isCart] : [isCart],
-            });
         }
     }, [isCart]);
 
@@ -60,9 +61,7 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
                     </div>
                     <i
                         className="add-to-card"
-                        onClick={() =>
-                            setCard(Items.find((el) => el.id === itemId))
-                        }
+                        onClick={() => addToCart({ pid: id, q: 1 })}
                     >
                         <AddRounded />
                     </i>
@@ -71,3 +70,11 @@ export default function ItemCard({ imgSrc, name, ratings, price, itemId }) {
         </div>
     );
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: addToCart(dispatch),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(ItemCard);
