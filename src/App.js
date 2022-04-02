@@ -26,7 +26,7 @@ function App() {
                 <div className="flex h-full">
                     <div className="w-full md:w-4/5 px-4">
                         <Switch>
-                            <Route path="/home">
+                            <Route exact path="/home">
                                 <HomeView />
                             </Route>
                             <Route path="/chat">
