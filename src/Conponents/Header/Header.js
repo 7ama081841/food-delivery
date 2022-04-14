@@ -38,7 +38,7 @@ export default function Header() {
             <div className="profile-container">
                 <div className="image-box">
                     <img
-                        src="https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-9/70161508_2418655518372182_1458404304825090048_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=eApnecca55AAX-ZjXcH&_nc_ht=scontent.ftun15-1.fna&oh=00_AT_wYql3c2jutxd4jfDya6l4YeFCS3k80nbK2gsZvdqMRw&oe=623B8EA6"
+                        src="https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-9/70161508_2418655518372182_1458404304825090048_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=qI_q5FfY6WsAX_Ozvjx&_nc_ht=scontent.ftun15-1.fna&oh=00_AT8OLYoMp7XJfXwLY7TEsrItD9vqQfd2V1IjI107w5IsqQ&oe=627ECB26"
                         alt=""
                         className="profile-pic"
                     />
